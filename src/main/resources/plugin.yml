@@ -1,0 +1,5 @@
+name: Punishment Logger
+version: BETA-0.1
+main: net.crackpixel.daysling.Main
+author: daysling
+depend: [AdvancedBan]
