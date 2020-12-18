@@ -12,6 +12,9 @@ import java.io.IOException;
 
 public class PunishmentListeners implements Listener {
 
+
+	private String url = "";
+
     @EventHandler
     public void onPunishment(PunishmentEvent e) throws IOException {
         Punishment punishment = e.getPunishment();
@@ -20,7 +23,7 @@ public class PunishmentListeners implements Listener {
         String duration  = punishment.getDuration(true);
         String operator = punishment.getOperator();
         String reason = punishment.getReason();
-        DiscordWebhook Webhookbuilder = new DiscordWebhook("https://");
+        DiscordWebhook Webhookbuilder = new DiscordWebhook(url);
         DiscordWebhook.EmbedObject object = new DiscordWebhook.EmbedObject();
         Webhookbuilder.addEmbed(
                       object.setTitle("Punishment Granted")
@@ -45,7 +48,7 @@ public class PunishmentListeners implements Listener {
         String playername = e.getPunishment().getName();
         String Operator  = e.getPunishment().getOperator();
         String reason = e.getPunishment().getReason();
-        DiscordWebhook Webhookbuilder = new DiscordWebhook("");
+        DiscordWebhook Webhookbuilder = new DiscordWebhook(url);
         DiscordWebhook.EmbedObject object = new DiscordWebhook.EmbedObject();
         Webhookbuilder.addEmbed(
                 object.setTitle("Punishment Revoked")
